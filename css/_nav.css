@@ -1,0 +1,36 @@
+.nav {
+	/*預設重整*/
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.nav-link {
+	/*基本內距*/
+	padding: 5px;
+    margin: 0px;
+  
+    /*修改類型*/
+	display: inline-block;
+}
+/*===============================*/
+.nav-number {
+	counter-reset: number-item;
+}
+
+.nav-number li {
+	position: relative;
+	padding-left: 1.5em;
+}
+
+.nav-number li:before {
+	content: counter(number-item);
+	counter-increment: number-item;
+	position: absolute;
+	left: 0;
+	font-size: 20px;
+	font-weight: 800;
+	opacity: .2;
+}
+
+

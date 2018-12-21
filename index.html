@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<!-- Bootstrap CSS -->
+    <link href="bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+	<!-- Custom CSS -->
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/style.css">
+	<!-- Custom Font  -->
+	<link href='https://fonts.googleapis.com/css?family=Alegreya+Sans' rel='stylesheet'>
+
+	<!-- Title --> 
+	<title>WR Gallery</title>
+	
+	<!-- Required Before Loading JS -->
+    <!-- jQuery JS -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- Required JS (w3IncludeHTML) -->
+	<script src="js/w3data.js"></script>
+	<!-- Required JS (myDataCenter) -->
+	<script src="https://d3js.org/d3.v4.min.js"></script>
+</head>
+
+<body>
+	<!-- <header w3-include-html="html/header.html"></header> -->
+	<!-- ===============================================================================  -->
+	<div class="site-header site-header-bg">
+	
+		<div class="container">
+
+			<!-- logo -->
+			<div class="site-logo nav nav-link pull-left">
+				<div class="site-logo-text">WR Gallery</div>
+				<!-- <div class="site-logo-img"></div> -->
+			</div><!-- end of site-sitelogo -->
+
+			<!-- mobile menu -->
+			<div class="site-menu-toggle">
+				<nav class="nav">
+					<a href="#" class="nav-link">&#9776;</a>
+				</nav>
+			</div><!-- end of site-menu-toggle -->
+			
+			<!-- main menu -->
+			<div class="site-menu">
+
+				<!-- <nav class="nav">
+					<div class="dropdown nav-link">
+						<button class="btn dropdown-toggle" type="button" data-toggle="dropdown">Web<span class="caret"></span></button>
+			  			<ul class="dropdown-menu">
+			    			<li><a href="#">喔熊列車圓夢計畫</a></li>
+			    			<li><a href="#">卡米爾VR簡報 </a></li>
+			  			</ul>
+					</div> 
+					<a href="#" class="nav-link">App</a>
+					<a href="#" class="nav-link">Expo</a>
+					<a href="https://medium.com/@sengallery" class="nav-link" target="_blank">Blog</a>
+				</nav> -->
+
+			</div><!-- end of site-menu -->
+				
+		</div><!-- end of container -->
+	</div><!-- end of site-header -->
+	<!-- ===============================================================================  -->
+	<div class="site-main">
+		<div class="container">			
+			<div class="row">
+
+				<!-- Sidebar 建立手風琴選單(動態/靜態)  -->
+				<div class="site-sidebar-menu col-lg-3"></div>
+				<!-- <div class="site-sidebar-menu col-lg-3" w3-include-html="html/accordion.html"></div> -->
+
+				<!-- Content 建立卡片內容(動態/靜態) -->
+				<div class="site-card col-md-12 col-lg-9"></div>
+				<!-- <div class="site-card col-md-12 col-lg-9" w3-include-html="html/card.html"></div> -->
+					
+			</div><!-- end of row -->	
+		</div><!-- end of container -->
+	</div><!-- end of site-main -->
+
+	<footer w3-include-html="html/footer.html"></footer>
+
+	<!-- ===================================================================================== -->
+
+	<script>
+		function fn() { window.location.reload(true); }
+        w3IncludeHTML();
+	</script>
+
+	<script src="js/myJS/myDataCenter.js"></script>
+    <script src="js/myJS/myCard.js"></script>
+    <script src="js/myJS/myAccordionMenu.js"></script>
+    <script src="js/myJS/myMainMenu.js"></script>
+    
+    <script>
+
+    	dataCenter.loadCsvData("data/myCardData.csv", onDataLoadComplete);
+
+		function onDataLoadComplete() {		
+    		createAccordionMenu(dataCenter, $('.site-sidebar-menu'));
+    		var defaultCardObject = dataCenter.getObjectByKey("year")["2014"][0];
+    		createCard(defaultCardObject, $('.site-card')); 
+    		createMainMenu(dataCenter, $('.site-menu'));
+		}
+    </script>
+
+</body>
+</html>

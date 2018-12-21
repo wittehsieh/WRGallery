@@ -1,0 +1,15 @@
+h1, h2, h3, h4, h5, h6 {
+	font-weight: 500;
+}
+.title {
+	font-size: 120%;
+	line-height: 1.2;
+}
+
+.title-sub {
+	font-size: 85%;
+	font-weight: 300;
+}
+.desc {
+	font-size: 90%;
+}

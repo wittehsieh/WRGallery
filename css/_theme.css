@@ -1,0 +1,128 @@
+/* -------------------------------- */
+/* custom color */
+/* custom height */
+/* header */
+/* menu */
+/* banner */
+/* main */
+/* accordion */
+/* card */
+/* footer */ 
+/* content */
+/* button */
+/* -------------------------------- */
+
+
+/*自定顏色*/
+.site-header-bg { background-color: #4d4443; }
+/*.site-main-bg { background-color: #;  }*/
+.site-footer-bg { background-color: #f7f7f7; }
+/*.content-bg { background-color: #; }*/
+/*.sidebar-bg { background-color: #; }*/
+
+
+/* ------------ header ------------ */
+.site-header {
+	width: 100%;
+	top: 0;
+	left: 0;
+	position: relative;
+	z-index: 99;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+.site-logo {
+	display: inline-block;
+}
+.site-logo-text {
+	font-size: 24px; /*20*/
+	font-weight: bolder;
+	color: white;
+	/*font-variant: small-caps;*/
+	font-family: 'Alegreya Sans';
+}
+.site-logo-img {
+	width: 10vh; /*50px;*/
+	height: 10vh; /*50px;*/
+	background-image: url(../img/logo.png);
+	background-size: cover;
+	background-position: center center;
+}
+
+
+/* ------------ menu ------------ */
+.site-menu, .site-menu-toggle {
+	/*垂直置中*/
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	/*水平置右*/
+	right: 2%;
+
+	font-family: 'Alegreya Sans';
+}
+@media (max-width: 992px) {	.site-menu { display: none; } }
+@media (min-width: 992px) {	.site-menu-toggle { display: none; } }
+
+.site-menu .nav-link { 
+	padding: 0px 15px 0px 15px; 
+	color: white; 
+	font-size: 28px;
+}
+
+/* ------------ main ------------ */
+.site-main {
+	position: relative;
+	z-index: 1;
+
+	padding: 50px 0px 50px 0px;
+}
+
+/* ------------ accordion ------------ */
+.panel-heading .accordion-toggle:before {
+	content: "－"; 
+}
+.panel-heading .accordion-toggle.collapsed:before {
+	content: "＋";
+}
+.panel-body li { list-style-type: square; }
+
+/* ------------ card ------------ */
+.site-card img {
+	width: 100%;
+	height: 450px;
+}
+#card-type {
+	border-radius: 3px;
+    background: lightgray;
+    padding: 2px 5px;
+}
+
+/* ------------ footer ------------ */
+.site-footer {
+	position: relative;
+	z-index: 1;
+
+	padding: 15px 0px 15px 0px;
+}
+.site-footer span {	
+	padding: 10px;
+	font-size: 14px;
+	display: inline-block;
+}
+
+/* ------------ button (mainMenu) ------------ */
+.btn { background-color: transparent; }
+.btn:link { color: white; }
+.btn:visited { color: white; }
+.btn:hover { color: gold; }
+.btn:active { color: gold; }
+.btn:focus { color: gold; }
+.btn {
+	font-size: 16px;
+	font-weight: bolder;
+	padding: 0px;
+}
+
+
+
