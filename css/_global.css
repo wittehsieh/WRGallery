@@ -7,7 +7,7 @@ html {
 }
 
 body {
-	font-family: 'Lucida Sans', 'Open Sans' ;
+	font-family:  'Lucida Sans', 'Open Sans', 'Roboto';
 	font-size: 16px;
 	line-height: 1.5;
 }
@@ -16,11 +16,17 @@ a {
 	color: #000;
 	text-decoration: none;
 }
-
+a:visited {
+    color: white;
+    text-decoration: none;
+}
 a:hover {
 	/*color: #4ea1d3;*/
 	color: #369fb2;
 	text-decoration: none;
+}
+a:active {
+    text-decoration: none;
 }
 
 .img-fluid {

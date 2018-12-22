@@ -60,11 +60,13 @@
 	right: 2%;
 
 	font-family: 'Alegreya Sans';
+	color: white;
 }
 @media (max-width: 992px) {	.site-menu { display: none; } }
 @media (min-width: 992px) {	.site-menu-toggle { display: none; } }
 
-.site-menu .nav-link { 
+.site-menu .nav-link,  
+.site-menu-toggle .nav-link, { 
 	padding: 0px 15px 0px 15px; 
 	color: white; 
 	font-size: 28px;
