@@ -21,11 +21,13 @@ a:visited {
     text-decoration: none;
 }
 a:hover {
-	/*color: #4ea1d3;*/
 	color: #369fb2;
 	text-decoration: none;
 }
 a:active {
+    text-decoration: none;
+}
+a:focus {
     text-decoration: none;
 }
 
@@ -35,17 +37,6 @@ a:active {
 	display: block;
 }
 
-.img-rounded {
-	border-radius: 50%;
-}
-
-/*hr {
-    margin: 20px 0px;
-    background-color: #f7f7f7;
-    color: #f7f7f7;
-    height: 3px;
-}*/
-
 hr {
     display: block;
     height: 1px;
@@ -53,6 +44,5 @@ hr {
     border-top: 1px solid #ccc;
     margin: 1em 0;
     padding: 0; 
-
     /*width: 70%;*/
 }

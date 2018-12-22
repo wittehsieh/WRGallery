@@ -12,14 +12,12 @@
 /* button */
 /* -------------------------------- */
 
-
 /*自定顏色*/
 .site-header-bg { background-color: #4d4443; }
 /*.site-main-bg { background-color: #;  }*/
 .site-footer-bg { background-color: #f7f7f7; }
 /*.content-bg { background-color: #; }*/
 /*.sidebar-bg { background-color: #; }*/
-
 
 /* ------------ header ------------ */
 .site-header {
@@ -35,10 +33,11 @@
 	display: inline-block;
 }
 .site-logo-text {
-	font-size: 24px; /*20*/
+	font-size: 24px; 
 	font-weight: bolder;
 	color: white;
 	/*font-variant: small-caps;*/
+	/*text-decoration: underline;*/
 	font-family: 'Alegreya Sans';
 }
 .site-logo-img {
@@ -112,6 +111,8 @@
 	font-size: 14px;
 	display: inline-block;
 }
+.site-footer a { color: black; }
+.site-footer a:hover { color: #369fb2; }
 
 /* ------------ button (mainMenu) ------------ */
 .btn { background-color: transparent; }
