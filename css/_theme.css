@@ -125,13 +125,14 @@
 }
 
 /* ------------ object-fit ------------ */
+/* Phone */
 @media (max-width: 768px ) { .img-fluid {object-fit: cover;} }
 /* Tablet */
 @media (min-width: 768px) { .img-fluid {object-fit: cover;} }
 /* Desktop */
 @media (min-width: 992px) {.img-fluid {object-fit: cover;} }
 /* Large Desktop */
-@media (min-width: 1200px) { .img-fluid {object-fit: cover;margin-left:0;} #card-img{width:50%;} }
+@media (min-width: 1200px) { .img-fluid {object-fit: cover; margin-left:0;} #card-img{width:50%;} }
 
 
 
