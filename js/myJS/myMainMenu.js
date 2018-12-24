@@ -11,19 +11,25 @@
 // 	<a href="#" class="nav-link">Expo</a>
 // 	<a href="https://medium.com/@sengallery" class="nav-link" target="_blank">Blog</a>
 // </nav>
-
-function createMainMenu(dataObject, parent) {
-
+function onMainItemClicked(dataObject) {
+	reloadCard(dataObject);
+	// console.log('hi');
+}
+function createMainMenu(dataCenter, parent) {
+	
 	var objectArrayByType = dataCenter.getObjectByKey("type");
-	var keyArrayByType = Object.keys(objectArrayByType);
-	var objectArrayByTitle = dataCenter.getObjectByKey("title");
-	var keyArrayByTitle = Object.keys(objectArrayByTitle);
+	var typeArray = Object.keys(objectArrayByType);
+	// console.log(typeArray); //APP WEB EXPO ANIM
+
+	var valArrayByType = Object.values(objectArrayByType);
+	// console.log(valArrayByType[0][0].title);
+	// console.log(valArrayByType[0][1].title);
 
 	var nav = document.createElement('nav');
 	nav.setAttribute('class', 'nav');
 
-	for(var i=0; i<keyArrayByType.length; i++) { 
-		// console.log(keyArrayByType[i]); // APP WEB EXPO UNITY
+	for(var i=0; i<typeArray.length; i++) { // 4
+		// console.log(typeArray[i]); // APP WEB EXPO ANIM
 		var div = document.createElement('div');
 		div.setAttribute('class', 'dropdown nav-link');
 		nav.appendChild(div);
@@ -33,23 +39,25 @@ function createMainMenu(dataObject, parent) {
 		btn.setAttribute('type', 'button');
 		btn.setAttribute('data-toggle', 'dropdown');
 
-		btn.innerHTML = keyArrayByType[i];
-		// console.log(keyArrayByType[i].length);
-		// if(keyArrayByType[i].length>1) { btn.innerHTML += '<span class="caret"></span>'; }
+		btn.innerHTML = typeArray[i]; // APP WEB EXPO ANIM
+		// if(typeArray[i].length>1) { btn.innerHTML += '<span class="caret"></span>'; }
 		div.appendChild(btn);
 
 		var ul = document.createElement('ul');
 		ul.setAttribute('class', 'dropdown-menu');
 		div.appendChild(ul);
 
-		for(var j=0; j<keyArrayByType[i].length; j++) { 
+		for (var j=0; j<valArrayByType[i].length; j++) { // 10 3 3 1
 
-			// console.log(keyArrayByTitle[i].length); // 8 9 6 11  (should be 8 3 2 1)
-			var li = document.createElement('li');
-			var a = document.createElement('a');
-			a.text = keyArrayByTitle[j];
-			li.appendChild(a);
-			ul.appendChild(li);
+			(function(k){	
+				var li = document.createElement('li');
+				var a = document.createElement('a');
+				var dataObject = valArrayByType[i][j];
+				a.text = dataObject.title;
+				a.addEventListener('click', function(){ onMainItemClicked(dataObject); }, false);
+				li.appendChild(a);
+				ul.appendChild(li);
+			})(j);
 		}	
 	}
 

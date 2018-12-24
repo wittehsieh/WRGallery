@@ -66,6 +66,9 @@
     	dataCenter.loadCsvData("data/data.csv", onDataLoadComplete);
 
 		function onDataLoadComplete() {	
+			
+    		// 動態建立主選單
+    		createMainMenu(dataCenter, $('.site-menu'));
 
 			// 動態建立側欄選單  
     		createAccordionMenu(dataCenter, $('.site-sidebar-menu'));
@@ -74,8 +77,6 @@
     		var defaultCardObject = dataCenter.getObjectByKey("year")["2016"][2];
     		createCard(defaultCardObject, $('.site-card')); 
 
-    		// 動態建立主選單
-    		createMainMenu(dataCenter, $('.site-menu'));
 		}
     </script>
 
