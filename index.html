@@ -29,46 +29,8 @@
 </head>
 
 <body>
-	<!-- <header w3-include-html="html/header.html"></header> -->
-	<!-- ===============================================================================  -->
-	<div class="site-header site-header-bg">
-	
-		<div class="container">
-
-			<!-- logo -->
-			<div class="site-logo nav nav-link pull-left">
-				<div class="site-logo-text">WR Gallery</div>
-				<div class="site-logo-img"></div>
-			</div><!-- end of site-sitelogo -->
-
-			<!-- mobile menu -->
-			<div class="site-menu-toggle">
-				<nav class="nav">
-					<a href="#" class="nav-link">&#9776;</a>
-				</nav>
-			</div><!-- end of site-menu-toggle -->
-			
-			<!-- main menu -->
-			<div class="site-menu">
-
-				<!-- <nav class="nav">
-					<div class="dropdown nav-link">
-						<button class="btn dropdown-toggle" type="button" data-toggle="dropdown">Web<span class="caret"></span></button>
-			  			<ul class="dropdown-menu">
-			    			<li><a href="#">喔熊列車圓夢計畫</a></li>
-			    			<li><a href="#">卡米爾VR簡報 </a></li>
-			  			</ul>
-					</div> 
-					<a href="#" class="nav-link">App</a>
-					<a href="#" class="nav-link">Expo</a>
-					<a href="https://medium.com/@sengallery" class="nav-link" target="_blank">Blog</a>
-				</nav> -->
-
-			</div><!-- end of site-menu -->
-				
-		</div><!-- end of container -->
-	</div><!-- end of site-header -->
-	<!-- ===============================================================================  -->
+	<header w3-include-html="html/header.html"></header>
+	<!-- ==================================================================== -->
 	<div class="site-main">
 		<div class="container">			
 			<div class="row">
@@ -87,7 +49,7 @@
 
 	<footer w3-include-html="html/footer.html"></footer>
 
-	<!-- ===================================================================================== -->
+	<!-- ==================================================================== -->
 
 	<script>
 		function fn() { window.location.reload(true); }
@@ -101,12 +63,18 @@
     
     <script>
 
-    	dataCenter.loadCsvData("data/myCardData.csv", onDataLoadComplete);
+    	dataCenter.loadCsvData("data/data.csv", onDataLoadComplete);
 
-		function onDataLoadComplete() {		
+		function onDataLoadComplete() {	
+
+			// 動態建立側欄選單  
     		createAccordionMenu(dataCenter, $('.site-sidebar-menu'));
-    		var defaultCardObject = dataCenter.getObjectByKey("year")["2014"][0];
+    		
+    		// 動態呈現資料內容
+    		var defaultCardObject = dataCenter.getObjectByKey("year")["2016"][2];
     		createCard(defaultCardObject, $('.site-card')); 
+
+    		// 動態建立主選單
     		createMainMenu(dataCenter, $('.site-menu'));
 		}
     </script>

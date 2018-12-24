@@ -41,8 +41,10 @@
 	font-family: 'Alegreya Sans';
 }
 .site-logo-img {
-	width: 7vh; /*50px;*/
-	height: 7vh; /*50px;*/
+	width: 8vh; /*50px;*/
+	height: 8vh; /*50px;*/
+	width: 50px;
+	height: 50px;
 	background-image: url(../img/logo.png);
 	background-size: cover;
 	background-position: center center;
@@ -124,20 +126,20 @@
 .btn:active { color: gold; }
 .btn:focus { color: gold; }
 .btn {
-	font-size: 16px;
+	font-size: 17px;
 	font-weight: bolder;
 	padding: 0px;
 }
 
 /* ------------ object-fit ------------ */
 /* Phone */
-@media (max-width: 768px ) { .img-fluid {object-fit: cover;} }
+@media (max-width: 768px ) { .img-fluid { object-fit: cover; } }
 /* Tablet */
-@media (min-width: 768px) { .img-fluid {object-fit: cover;} }
+@media (min-width: 768px) { .img-fluid { object-fit: cover; } }
 /* Desktop */
-@media (min-width: 992px) {.img-fluid {object-fit: cover;} }
+@media (min-width: 992px) {.img-fluid { object-fit: cover; } }
 /* Large Desktop */
-@media (min-width: 1200px) { .img-fluid {object-fit: cover; margin-left:0;} #card-img{width:50%;} }
+@media (min-width: 1200px) { .img-fluid { object-fit: cover; margin-left:0; } #card-img{ width:50%; } }
 
 
 

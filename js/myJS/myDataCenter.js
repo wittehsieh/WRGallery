@@ -1,3 +1,8 @@
+// loadCsvData
+// getObjectByCondition
+// getValuesOfKey
+// getObjectByKey
+
 var dataCenter = new Object();
 
 dataCenter.csvData = [];
