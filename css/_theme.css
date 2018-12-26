@@ -1,6 +1,5 @@
 /* -------------------------------- */
-/* custom color */
-/* custom height */
+/* custom bgcolor & height */
 /* header */
 /* menu */
 /* banner */
@@ -9,10 +8,10 @@
 /* card */
 /* footer */ 
 /* content */
-/* button */
+/* custom button */
 /* -------------------------------- */
 
-/*自定顏色*/
+/* custom bgcolor */
 .site-header-bg { background-color: #4d4443; }
 /*.site-main-bg { background-color: #;  }*/
 .site-footer-bg { background-color: #f7f7f7; }
@@ -33,12 +32,10 @@
 	display: inline-block;
 }
 .site-logo-text {
+	font-family: 'Alegreya Sans';
 	font-size: 24px; 
 	font-weight: bolder;
-	color: white;
 	/*font-variant: small-caps;*/
-	/*text-decoration: underline;*/
-	font-family: 'Alegreya Sans';
 }
 .site-logo-img {
 	width: 8vh; /*50px;*/
@@ -52,44 +49,47 @@
 @media (max-width: 992px) {	.site-logo-text { display: none; } }
 @media (min-width: 992px) {	.site-logo-img { display: none; } }
 
-
 /* ------------ menu ------------ */
 .site-menu, .site-menu-toggle {
+	font-family: 'Alegreya Sans';
 	/*垂直置中*/
 	position: absolute;
 	top: 50%;
 	transform: translateY(-50%);
 	/*水平置右*/
 	right: 2%;
-
-	font-family: 'Alegreya Sans';
-	color: white;
 }
-@media (max-width: 992px) {	.site-menu { display: none; } }
-@media (min-width: 992px) {	.site-menu-toggle { display: none; } }
-
 .site-menu .nav-link,  
 .site-menu-toggle .nav-link, { 
 	padding: 0px 15px 0px 15px; 
 	color: white; 
 	font-size: 28px;
 }
+.site-menu-btn { background-color: transparent; border: none; }
+/*.site-menu-btn:link { color: white; }*/
+/*.site-menu-btn:visited { color: white; }*/
+.site-menu-btn:hover { color: gold; }
+.site-menu-btn:active { color: gold; }
+.site-menu-btn:focus { color: gold; }
+
+@media (max-width: 992px) {	.site-menu { display: none; } }
+@media (min-width: 992px) {	.site-menu-toggle { display: none; } }
 
 /* ------------ main ------------ */
 .site-main {
 	position: relative;
 	z-index: 1;
-
 	padding: 50px 0px 50px 0px;
+
+	/* sticky footer */
+	/* https://aotu.io/notes/2017/04/13/Sticky-footer/index.html */
+	/* 減掉footer高度70px */
+	min-height: calc(100vh - 70px); 
 }
 
 /* ------------ accordion ------------ */
-.panel-heading .accordion-toggle:before {
-	content: "－"; 
-}
-.panel-heading .accordion-toggle.collapsed:before {
-	content: "＋";
-}
+.panel-heading .accordion-toggle:before { content: "－"; }
+.panel-heading .accordion-toggle.collapsed:before {	content: "＋"; }
 .panel-body li { list-style-type: square; }
 
 /* ------------ card ------------ */
@@ -102,44 +102,36 @@
     background: lightgray;
     padding: 2px 5px;
 }
+/* Phone */
+@media (max-width: 768px ) { .img-fluid { object-fit: cover; } }
+/* Tablet */
+@media (min-width: 768px) { .img-fluid { object-fit: cover; } }
+/* Desktop */
+@media (min-width: 992px) { .img-fluid { object-fit: cover; } }
+/* Large Desktop */
+@media (min-width: 1200px) { .img-fluid { object-fit: cover; margin-left:0; } #card-img { width:50%; } }
+
+.button-lightseagreen {
+	background-color: #4d4443;
+	color: lightgray;
+}
+.button-lightseagreen:hover {
+	background-color: #369fb2;
+	color: white;
+}
 
 /* ------------ footer ------------ */
 .site-footer {
 	position: relative;
 	z-index: 1;
-
 	padding: 15px 0px 15px 0px;
+
+	height: 70px;
 }
 .site-footer span {	
 	padding: 10px;
 	font-size: 14px;
 	display: inline-block;
 }
-.site-footer a { color: black; }
-.site-footer a:hover { color: #369fb2; }
-
-/* ------------ button (mainMenu) ------------ */
-.btn { background-color: transparent; }
-.btn:link { color: white; }
-.btn:visited { color: white; }
-.btn:hover { color: gold; }
-.btn:active { color: gold; }
-.btn:focus { color: gold; }
-.btn {
-	font-size: 17px;
-	font-weight: bolder;
-	padding: 0px;
-}
-
-/* ------------ object-fit ------------ */
-/* Phone */
-@media (max-width: 768px ) { .img-fluid { object-fit: cover; } }
-/* Tablet */
-@media (min-width: 768px) { .img-fluid { object-fit: cover; } }
-/* Desktop */
-@media (min-width: 992px) {.img-fluid { object-fit: cover; } }
-/* Large Desktop */
-@media (min-width: 1200px) { .img-fluid { object-fit: cover; margin-left:0; } #card-img{ width:50%; } }
-
 
 

@@ -69,6 +69,7 @@
 			
     		// 動態建立主選單
     		createMainMenu(dataCenter, $('.site-menu'));
+    		$('.site-menu-toggle').on('click', createMainMenuToggle);
 
 			// 動態建立側欄選單  
     		createAccordionMenu(dataCenter, $('.site-sidebar-menu'));

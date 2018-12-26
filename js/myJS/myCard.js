@@ -74,7 +74,7 @@ function createCard(dataObject, parent) {
 
 	var cardButton = document.createElement('a');
 	cardButton.setAttribute('id', 'card-button');
-	cardButton.setAttribute('class', 'button button-lightseagreen');
+	cardButton.setAttribute('class', 'button');
 	cardButton.setAttribute('target', '_blank');
 	cardButton.textContent = dataObject.linkTitle;
 	cardContent.appendChild(cardButton);

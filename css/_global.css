@@ -1,42 +1,36 @@
-*, *:before, *:after {
-  box-sizing: inherit;
-}
+/* -------------------------------- */
+/* box-sizing */
+/* body font */
+/* body link */
+/* body img */
+/* horizontal line */
+/* -------------------------------- */
 
-html {
-  box-sizing: border-box;
-}
+/* box-sizing */
+*, *:before, *:after { box-sizing: inherit; }
+html { box-sizing: border-box; }
 
+/* body font */
 body {
 	font-family:  'Lucida Sans', 'Open Sans', 'Roboto';
 	font-size: 16px;
 	line-height: 1.5;
+    color: black;
 }
 
-a {
-	color: #000;
-	text-decoration: none;
-}
-a:visited {
-    color: white;
-    text-decoration: none;
-}
-a:hover {
-	color: #369fb2;
-	text-decoration: none;
-}
-a:active {
-    text-decoration: none;
-}
-a:focus {
-    text-decoration: none;
-}
+/* body link */
+a, a:visited, a:hover, a:active, a:focus { text-decoration: none; } 
+a { color: black; }
+a:hover { color: #369fb2; cursor: pointer; }
 
+/* body img */
 .img-fluid {
-	max-width: 100%;
-	height: auto;
-	display: block;
+    max-width: 100%;
+    height: auto;
+    display: block;
 }
 
+/* horizontal line */
 hr {
     display: block;
     height: 1px;

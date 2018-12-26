@@ -16,7 +16,7 @@ function onMainItemClicked(dataObject) {
 	// console.log('hi');
 }
 function createMainMenu(dataCenter, parent) {
-	
+
 	var objectArrayByType = dataCenter.getObjectByKey("type");
 	var typeArray = Object.keys(objectArrayByType);
 	// console.log(typeArray); //APP WEB EXPO ANIM
@@ -35,7 +35,7 @@ function createMainMenu(dataCenter, parent) {
 		nav.appendChild(div);
 
 		var btn = document.createElement('button');
-		btn.setAttribute('class', 'btn dropdown-toggle');
+		btn.setAttribute('class', 'site-menu-btn dropdown-toggle');
 		btn.setAttribute('type', 'button');
 		btn.setAttribute('data-toggle', 'dropdown');
 
@@ -62,4 +62,10 @@ function createMainMenu(dataCenter, parent) {
 	}
 
 	parent.append(nav);
+}
+
+
+// https://codepen.io/CreativeJuiz/pen/oCBxz
+function createMainMenuToggle(){
+	console.log('hi');
 }
