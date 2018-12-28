@@ -1,3 +1,13 @@
+// function onAccordionItemClicked(dataObject)
+// function createItemList(dataObjectArray, parent)
+// function createAccordionPanel(dataObjectArray, index, key, parent) 
+// function createAccordionMenu(dataCenter, sortKey, parent)
+
+
+
+function onAccordionItemClicked(dataObject) {
+	reloadCard(dataObject);
+}
 // ---------------------------- // 
 // 1.createItemList
 // ---------------------------- // 
@@ -7,11 +17,7 @@
 // 		<li><a>item2</a></li>
 // 	</ul>
 // </div>
-// function onAccordionItemClicked(dataObject, parent) {
-function onAccordionItemClicked(dataObject) {
-	reloadCard(dataObject);
-}
-function createItemList(dataArray, parent) {
+function createItemList(dataObjectArray, parent) {
 
 	var panelBody = document.createElement('div');
 	panelBody.setAttribute('class', 'panel-body');
@@ -19,17 +25,15 @@ function createItemList(dataArray, parent) {
 	var ul = document.createElement('ul');
 	panelBody.appendChild(ul);
 
-	for (var i=0; i<dataArray.length; i++) {
-
+	for (var i=0; i<dataObjectArray.length; i++) {
 		(function(j){
 			var li = document.createElement('li');
 			var a = document.createElement('a');
-			a.text = dataArray[j].title; 
-			// a.setAttribute('href', 'index.html');
-			// a.setAttribute('href', '#');
-			a.addEventListener('click', function(){ onAccordionItemClicked(dataArray[j]); }, false);
+			var dataObject = dataObjectArray[j];
+			a.text = dataObject.title; 
+			a.addEventListener('click', function(){ onAccordionItemClicked(dataObject); }, false);
+			// a.addEventListener('click', function(){ reloadCard(dataObject); }, false);
 			li.appendChild(a);
-
 			ul.appendChild(li);
 		})(i);
 	}
@@ -41,10 +45,8 @@ function createItemList(dataArray, parent) {
 // <div class="panel">
 //	<div id="heading_X class="panel-heading">
 // 		<h4 class="panel-title">
-//          <a class="accordion-toggle collapsed" 
-//                    data-toggle="collapse" 
-//                    data-parent="#accordion" 
-//                    href="#collapse_X">category1
+//          <a class="accordion-toggle collapsed" data-toggle="collapse" 
+//                    data-parent="#accordion" href="#collapse_X">category1
 //          </a>
 // 		</h4>
 // 	</div>
@@ -54,9 +56,7 @@ function createItemList(dataArray, parent) {
 // 		</div>
 // 	</div>
 // </div>
-function createAccordionPanel(dataObject, index, key, parent) {
-
-	// console.log('createAccordionPanel');
+function createAccordionPanel(dataObjectArray, index, key, parent) {
 
 	var panel = document.createElement('div');
 	panel.setAttribute('class', 'panel');
@@ -81,7 +81,7 @@ function createAccordionPanel(dataObject, index, key, parent) {
 	var panelCollapse = document.createElement('div');
 	panelCollapse.setAttribute('class', 'panel-collapse collapse');
 	panelCollapse.setAttribute('id', 'collapse_'+index);
-	createItemList(dataObject, panelCollapse) ;
+	createItemList(dataObjectArray, panelCollapse) ;
 	panel.appendChild(panelCollapse);
 
 	parent.append(panel);
@@ -92,17 +92,16 @@ function createAccordionPanel(dataObject, index, key, parent) {
 // <div id="accordion" class="panel-group">
 //  createAccordionPanel();
 // </div>
-function createAccordionMenu(dataCenter, parent) {
+function createAccordionMenu(dataCenter, sortKey, parent) {
 
 	var panelGroup = document.createElement('div');
 	panelGroup.setAttribute('id', 'accordion');
 	panelGroup.setAttribute('class', 'panel-group');
 
-	var objectArrayByKey = dataCenter.getObjectByKey("year");
-	// console.log(dataCenter);
-	// console.log(objectArrayByKey);
-
-	var keyArray = Object.keys(objectArrayByKey);
+	// var objectArrayByKey = dataCenter.getObjectByKey("year");
+	var objectArrayByKey = dataCenter.getObjectByKey(sortKey); //{2014: Array(1), 2015: Array(3), ...}
+	var keyArray = Object.keys(objectArrayByKey); //["2014", "2015", ...]
+	
 	for (var i=0; i<keyArray.length; i++) {
 		createAccordionPanel(objectArrayByKey[keyArray[i]], i, keyArray[i], panelGroup);
 	}

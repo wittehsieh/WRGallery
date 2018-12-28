@@ -92,6 +92,11 @@
 .panel-heading .accordion-toggle.collapsed:before {	content: "＋"; }
 .panel-body li { list-style-type: square; }
 
+
+/* Phone */
+@media (max-width: 768px ) { .site-sidebar-menu { display: none; } }
+
+
 /* ------------ card ------------ */
 .site-card img {
 	width: 100%;
@@ -125,8 +130,7 @@
 	position: relative;
 	z-index: 1;
 	padding: 15px 0px 15px 0px;
-
-	height: 70px;
+	/*height: 70px;*/
 }
 .site-footer span {	
 	padding: 10px;

@@ -4,7 +4,7 @@
 <head>
 	<!-- Required meta tags -->
 	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1 user-scalable=no">
 	
 	<!-- Bootstrap CSS -->
     <link href="bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
@@ -52,6 +52,7 @@
 	<!-- ==================================================================== -->
 
 	<script>
+	    // Reload the current page, without using the cache
 		function fn() { window.location.reload(true); }
         w3IncludeHTML();
 	</script>
@@ -68,14 +69,18 @@
 		function onDataLoadComplete() {	
 			
     		// 動態建立主選單
-    		createMainMenu(dataCenter, $('.site-menu'));
-    		$('.site-menu-toggle').on('click', createMainMenuToggle);
+    		// createMainMenu(dataCenter, $('.site-menu'));
+    		createMainMenu(dataCenter, "type", $('.site-menu'));
+    		createMainMenuToggle(dataCenter, "type", $('.site-menu-toggle'));
+    		// createAccordionMenu(dataCenter, "type", $('.site-menu-toggle'));
+    		
 
 			// 動態建立側欄選單  
-    		createAccordionMenu(dataCenter, $('.site-sidebar-menu'));
+    		// createAccordionMenu(dataCenter, $('.site-sidebar-menu'));
+    		createAccordionMenu(dataCenter, "year", $('.site-sidebar-menu'));
     		
     		// 動態呈現資料內容
-    		var defaultCardObject = dataCenter.getObjectByKey("year")["2016"][2];
+    		var defaultCardObject = dataCenter.getObjectByKey("year")["2017"][0];
     		createCard(defaultCardObject, $('.site-card')); 
 
 		}

@@ -1,7 +1,7 @@
 // loadCsvData
-// getObjectByCondition
-// getValuesOfKey
-// getObjectByKey
+// getValuesOfKey 
+// getObjectByKey 
+// getObjectByCondition 
 
 var dataCenter = new Object();
 
@@ -12,10 +12,15 @@ dataCenter.loadCsvData = function(csvDataUrl, onLoadComplete) {
 		dataCenter.csvData = data; 
 		onLoadComplete();
 		
-		// getObjectByCondition({key:"year", val:"2015"});
-		// getValuesOfKey("year");
-		// getValuesOfKey("type");
-		// getObjectByKey("type");
+		// dataCenter.getValuesOfKey("year"); //["2014", "2015", "2016", "2017", "2018"]
+		// dataCenter.getValuesOfKey("type"); //["APP", "WEB", "EXPO", "ANIM"]
+		// dataCenter.getObjectByKey("type"); //{APP: Array(10), WEB: Array(3), EXPO: Array(3), ANIM: Array(1)}
+
+		// dataCenter.getObjectByCondition({key:"type", val:"WEB"}); 
+		// 0: {id:"OhBear", year:"2016", type:"WEB", ...}
+		// 1: {id:"CameoVR", year:"2017", type:"WEB", ...}
+		// 2: {id:"CloudShop", year:"2018", type:"WEB", ...}
+
 	});
 }
 dataCenter.getObjectByCondition = function(condition) {

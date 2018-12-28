@@ -72,13 +72,18 @@ function createCard(dataObject, parent) {
 	cardDesc.textContent = dataObject.desc;
 	cardContent.appendChild(cardDesc);
 
-	var cardButton = document.createElement('a');
-	cardButton.setAttribute('id', 'card-button');
-	cardButton.setAttribute('class', 'button');
-	cardButton.setAttribute('target', '_blank');
-	cardButton.textContent = dataObject.linkTitle;
-	cardContent.appendChild(cardButton);
+    if(dataObject.linkTitle !== '') {
 
+    	console.log('createCard');
+
+    	var cardButton = document.createElement('a');
+		cardButton.setAttribute('id', 'card-button');
+		cardButton.setAttribute('class', 'button');
+		cardButton.setAttribute('target', '_blank');
+		cardButton.textContent = dataObject.linkTitle;
+		cardContent.appendChild(cardButton);
+    }
+	
 	// var cardButton2;
 	// var cardButton3;
 
@@ -107,7 +112,13 @@ function reloadCard(dataObject) {
 	var cardDesc = document.getElementById("card-desc");
 	cardDesc.textContent = dataObject.desc;
 
-	var cardButton = document.getElementById("card-button");
-	cardButton.setAttribute('href', dataObject.link);
-	cardButton.textContent = dataObject.linkTitle;	
+	if(dataObject.linkTitle !== '') {
+
+		console.log(dataObject.link);
+    	console.log('reloadCard');
+
+		var cardButton = document.getElementById("card-button");
+		cardButton.setAttribute('href', dataObject.link);
+		cardButton.textContent = dataObject.linkTitle;	
+    }
 }
