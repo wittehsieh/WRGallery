@@ -1,0 +1,4 @@
+.panel-body li { list-style-type: square; }
+
+.panel-heading .accordion-toggle:before { content: "－"; }
+.panel-heading .accordion-toggle.collapsed:before {	content: "＋"; }

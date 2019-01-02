@@ -1,54 +1,44 @@
 <!DOCTYPE html>
 <html>
 
+
 <head>
+	<title>WR Gallery</title>
+	
 	<!-- Required meta tags -->
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1 user-scalable=no">
 	
-	<!-- Bootstrap CSS -->
-    <link href="bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-	<!-- Custom CSS -->
-	<link rel="stylesheet" href="css/normalize.css">
-	<link rel="stylesheet" href="css/style.css">
-	<!-- Custom Font  -->
+	<!-- CSS & Font-->
+    <link href="bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"><!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="css/style.css"><!-- Custom CSS -->
 	<link href='https://fonts.googleapis.com/css?family=Alegreya+Sans' rel='stylesheet'>
 	<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
-	<!-- Title --> 
-	<title>WR Gallery</title>
 	
 	<!-- Required Before Loading JS -->
-    <!-- jQuery JS -->
-    <script src="https://code.jquery.com/jquery.js"></script>
-    <!-- Bootstrap JS -->
-    <script src="bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <!-- Required JS (w3IncludeHTML) -->
-	<script src="js/w3data.js"></script>
-	<!-- Required JS (myDataCenter) -->
-	<script src="https://d3js.org/d3.v4.min.js"></script>
+    <script src="https://code.jquery.com/jquery.js"></script><!-- jQuery JS -->
+    <script src="bootstrap/3.3.7/js/bootstrap.min.js"></script><!-- Bootstrap JS -->
+   	<script src="js/w3data.js"></script><!-- w3IncludeHTML -->
+	<script src="https://d3js.org/d3.v4.min.js"></script><!-- myDataCenter required -->
 </head>
 
+
 <body>
+	<!-- ==================================================================== -->
 	<header w3-include-html="html/header.html"></header>
 	<!-- ==================================================================== -->
-	<div class="site-main">
+	<div class="site-main site-main-bg">
 		<div class="container">			
 			<div class="row">
-
-				<!-- Sidebar 建立手風琴選單(動態/靜態)  -->
+				<!-- Accordion Sidebar -->
 				<div class="site-sidebar-menu col-lg-3"></div>
-				<!-- <div class="site-sidebar-menu col-lg-3" w3-include-html="html/accordion.html"></div> -->
-
-				<!-- Content 建立卡片內容(動態/靜態) -->
+				<!-- Card content -->
 				<div class="site-card col-md-12 col-lg-9"></div>
-				<!-- <div class="site-card col-md-12 col-lg-9" w3-include-html="html/card.html"></div> -->
-					
-			</div><!-- end of row -->	
-		</div><!-- end of container -->
-	</div><!-- end of site-main -->
-
+			</div>	
+		</div>
+	</div>
+	<!-- ==================================================================== -->
 	<footer w3-include-html="html/footer.html"></footer>
-
 	<!-- ==================================================================== -->
 
 	<script>
@@ -68,23 +58,22 @@
 
 		function onDataLoadComplete() {	
 			
-    		// 動態建立主選單
-    		// createMainMenu(dataCenter, $('.site-menu'));
+    		// Create main menu dynamically
     		createMainMenu(dataCenter, "type", $('.site-menu'));
-    		createMainMenuToggle(dataCenter, "type", $('.site-menu-toggle'));
+			setMainMenuToggled($(".toggle-button"), $(".site-sidebar-menu"));
+			// setMainMenuToggled($(".site-menu-toggle"), $(".site-sidebar-menu"));
+    		//createMainMenuToggle(dataCenter, "type", $('.site-menu-toggle'));
     		// createAccordionMenu(dataCenter, "type", $('.site-menu-toggle'));
     		
-
-			// 動態建立側欄選單  
-    		// createAccordionMenu(dataCenter, $('.site-sidebar-menu'));
+			// Create sidebar menu dynamically 
     		createAccordionMenu(dataCenter, "year", $('.site-sidebar-menu'));
     		
-    		// 動態呈現資料內容
+    		// Display card content dynamically
     		var defaultCardObject = dataCenter.getObjectByKey("year")["2017"][0];
     		createCard(defaultCardObject, $('.site-card')); 
-
 		}
     </script>
+
 
 </body>
 </html>

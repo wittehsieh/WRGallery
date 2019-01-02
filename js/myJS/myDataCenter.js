@@ -1,3 +1,5 @@
+// https://www.oxxostudio.tw/articles/201501/svg-d3-13-csv.html
+
 // loadCsvData
 // getValuesOfKey 
 // getObjectByKey 
@@ -5,13 +7,17 @@
 
 var dataCenter = new Object();
 
+// variable
 dataCenter.csvData = [];
 
+// method
+// Convert CSV to JSON
 dataCenter.loadCsvData = function(csvDataUrl, onLoadComplete) {
 	d3.csv(csvDataUrl, function(data) { 
 		dataCenter.csvData = data; 
 		onLoadComplete();
-		
+		// console.log(data);
+
 		// dataCenter.getValuesOfKey("year"); //["2014", "2015", "2016", "2017", "2018"]
 		// dataCenter.getValuesOfKey("type"); //["APP", "WEB", "EXPO", "ANIM"]
 		// dataCenter.getObjectByKey("type"); //{APP: Array(10), WEB: Array(3), EXPO: Array(3), ANIM: Array(1)}

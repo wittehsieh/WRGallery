@@ -73,30 +73,3 @@ var Fish1 = new Fish('red', 4, '淡水');
 var Fish2 = new Fish('blue', 3, '海水');
 Fish1.showColor();
 fish2.showSize(); //error
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

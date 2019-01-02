@@ -13,9 +13,9 @@
 
 /* custom bgcolor */
 .site-header-bg { background-color: #4d4443; }
-/*.site-main-bg { background-color: #;  }*/
+/*.site-main-bg { background-color: green;  }*/
 .site-footer-bg { background-color: #f7f7f7; }
-/*.content-bg { background-color: #; }*/
+/*.content-bg { background-color: green; }*/
 /*.sidebar-bg { background-color: #; }*/
 
 /* ------------ header ------------ */
@@ -75,6 +75,12 @@
 @media (max-width: 992px) {	.site-menu { display: none; } }
 @media (min-width: 992px) {	.site-menu-toggle { display: none; } }
 
+
+/* ------------ toggle ------------ */
+/**/
+/**/
+/* -------------------------------- */
+
 /* ------------ main ------------ */
 .site-main {
 	position: relative;
@@ -88,14 +94,10 @@
 }
 
 /* ------------ accordion ------------ */
-.panel-heading .accordion-toggle:before { content: "－"; }
-.panel-heading .accordion-toggle.collapsed:before {	content: "＋"; }
-.panel-body li { list-style-type: square; }
-
-
 /* Phone */
 @media (max-width: 768px ) { .site-sidebar-menu { display: none; } }
-
+/* Tablet */
+@media (min-width: 768px) { ..site-sidebar-menu { display: none; } }
 
 /* ------------ card ------------ */
 .site-card img {

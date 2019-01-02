@@ -1,4 +1,3 @@
-
 /* 共用樣式 */
 @import url(_global.css);
 @import url(_layout.css);
@@ -10,6 +9,7 @@
 @import url(_form.css);
 @import url(_media.css);
 @import url(_table.css);
+@import url(_accordion.css);
 @import url(_toggle.css);
 
 /* 合併模組 */

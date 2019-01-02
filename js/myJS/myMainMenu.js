@@ -1,3 +1,5 @@
+// _toggle.css
+
 // <nav class="nav">
 // 		<div class="dropdown nav-link">
 // 			<button class="btn dropdown-toggle" type="button" 
@@ -13,12 +15,13 @@
 // 		<div class="dropdown nav-link">...</a>
 // 		<div class="dropdown nav-link">...</a>
 // </nav>
-function onMainItemClicked(dataObject) {
+
+function onItemClicked(dataObject) {
+
 	reloadCard(dataObject);
 }
 function createMainMenu(dataCenter, sortKey, parent) {
 
-	// var objectArrayByType = dataCenter.getObjectByKey("type");
 	var objectArrayByKey = dataCenter.getObjectByKey(sortKey);
 	var keyArray = Object.keys(objectArrayByKey); //["APP", "WEB", "EXPO", "ANIM"]
 	var valueArray = Object.values(objectArrayByKey);
@@ -49,7 +52,7 @@ function createMainMenu(dataCenter, sortKey, parent) {
 				var a = document.createElement('a');
 				var dataObject = valueArray[i][j];
 				a.text = dataObject.title;
-				a.addEventListener('click', function(){ onMainItemClicked(dataObject); }, false);
+				a.addEventListener('click', function(){ onItemClicked(dataObject); }, false);
 				// a.addEventListener('click', function(){ reloadCard(dataObject); }, false);
 				li.appendChild(a);
 				ul.appendChild(li);
@@ -59,23 +62,11 @@ function createMainMenu(dataCenter, sortKey, parent) {
 
 	parent.append(nav);
 }
+function setMainMenuToggled(toggleButton, menu){
 
-function createMainMenuToggle(dataCenter, sortKey, parent){
-	// console.log('hi createMainMenuToggle');
-	//setMenuToggle
-	setMenuToggle($("#toggle2"), $(".site-sidebar-menu"));
-	//create menu
-	
-	//create menu items
-}
-
-function setMenuToggle(toggle, menu){
-
-	// menu.hide();
-	toggle.click(function(){ 
+	toggleButton.click(function(){ 
 		$(this).toggleClass('open');
 		menu.slideToggle();
 	});
-
 }
 
