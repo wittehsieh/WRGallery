@@ -1,3 +1,4 @@
+
 // Used with _accordion.css
 
 // ---------------------------- // 
@@ -17,6 +18,7 @@
 // 		<h4 class="panel-title">
 //          <a class="accordion-toggle collapsed" data-toggle="collapse" 
 //                    data-parent="#accordion" href="#collapse_X">category1
+//                    data-parent=".accordion" href="#collapse_X">category1
 //          </a>
 // 		</h4>
 // 	</div>
@@ -29,7 +31,8 @@
 // ---------------------------- // 
 // 3.createAccordionMenu
 // ---------------------------- // 
-// <div id="accordion" class="panel-group">
+// <div id="accordion" class="panel-group">     X
+// <div class="accordion" class="panel-group">  O
 //  createAccordionPanel();
 // </div>
 
@@ -78,6 +81,7 @@ function createAccordionPanel(dataObjectArray, index, key, parent) {
 	panelTitleLink.setAttribute('class', 'accordion-toggle collapsed');
 	panelTitleLink.setAttribute('data-toggle', 'collapse');
 	panelTitleLink.setAttribute('data-parent', '#accordion');
+	// panelTitleLink.setAttribute('data-parent', '.accordion');
 	panelTitleLink.setAttribute('href', '#collapse_'+index);
 	panelTitleLink.text = key;
 	panelTitle.appendChild(panelTitleLink);
@@ -94,6 +98,7 @@ function createAccordionMenu(dataCenter, sortKey, parent) {
 
 	var panelGroup = document.createElement('div');
 	panelGroup.setAttribute('id', 'accordion');
+	// panelGroup.setAttribute('class', 'accordion');
 	panelGroup.setAttribute('class', 'panel-group');
 
 	var objectArrayByKey = dataCenter.getObjectByKey(sortKey); //{2014: Array(1), 2015: Array(3), ...}

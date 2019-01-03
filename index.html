@@ -60,15 +60,16 @@
 			
     		// Create main menu 
     		createNavMenu(dataCenter, "type", $('.site-menu'));  
-    		setNavMenuToggled($(".toggle-button"), $(".site-sidebar-menu"));
+    		
     		 	
     		// Create mobile menu 
-    		// createAccordionMenu(dataCenter, "type", $('.site-menu-toggle'));
-    		// setNavMenuToggled($(".toggle-button"), $(".site-menu-toggle"));	
+    		// createAccordionMenu(dataCenter, "type", $('.site-menu-toggle-content'));
+    		// setNavMenuToggled($(".site-menu-toggle-button"), $(".site-menu-toggle-content"));	
 			
 			// Create sidebar menu  
     		createAccordionMenu(dataCenter, "year", $('.site-sidebar-menu'));
     		// createAccordionMenu(dataCenter, "type", $('.site-sidebar-menu'));
+    		
     		
     		// Display card content 
     		var defaultCardObject = dataCenter.getObjectByKey("year")["2017"][0];

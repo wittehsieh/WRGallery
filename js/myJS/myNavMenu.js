@@ -64,11 +64,8 @@ function createNavMenu(dataCenter, sortKey, parent) {
 }
 function setNavMenuToggled(toggleButton, menu){
 
-	// menu.hide();
-
 	toggleButton.click(function(){ 
 		$(this).toggleClass('open');
 		menu.slideToggle();
 	});
 }
-
