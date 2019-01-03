@@ -1,4 +1,4 @@
-// _accordion.css
+// Used with _accordion.css
 
 // ---------------------------- // 
 // 1.createItemList
@@ -32,6 +32,8 @@
 // <div id="accordion" class="panel-group">
 //  createAccordionPanel();
 // </div>
+
+
 function onItemClicked(dataObject) {
 
 	reloadCard(dataObject);
@@ -50,8 +52,8 @@ function createItemList(dataObjectArray, parent) {
 			var a = document.createElement('a');
 			var dataObject = dataObjectArray[j];
 			a.text = dataObject.title; 
+			// a.text = dataObject[accordionMenuConfig]; 
 			a.addEventListener('click', function(){ onItemClicked(dataObject); }, false);
-			// a.addEventListener('click', function(){ reloadCard(dataObject); }, false);
 			li.appendChild(a);
 			ul.appendChild(li);
 		})(i);

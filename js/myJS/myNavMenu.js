@@ -1,4 +1,5 @@
-// _toggle.css
+// Used with _nav.css 
+// Used with _toggle.css
 
 // <nav class="nav">
 // 		<div class="dropdown nav-link">
@@ -20,7 +21,7 @@ function onItemClicked(dataObject) {
 
 	reloadCard(dataObject);
 }
-function createMainMenu(dataCenter, sortKey, parent) {
+function createNavMenu(dataCenter, sortKey, parent) {
 
 	var objectArrayByKey = dataCenter.getObjectByKey(sortKey);
 	var keyArray = Object.keys(objectArrayByKey); //["APP", "WEB", "EXPO", "ANIM"]
@@ -53,7 +54,6 @@ function createMainMenu(dataCenter, sortKey, parent) {
 				var dataObject = valueArray[i][j];
 				a.text = dataObject.title;
 				a.addEventListener('click', function(){ onItemClicked(dataObject); }, false);
-				// a.addEventListener('click', function(){ reloadCard(dataObject); }, false);
 				li.appendChild(a);
 				ul.appendChild(li);
 			})(j);
@@ -62,7 +62,9 @@ function createMainMenu(dataCenter, sortKey, parent) {
 
 	parent.append(nav);
 }
-function setMainMenuToggled(toggleButton, menu){
+function setNavMenuToggled(toggleButton, menu){
+
+	// menu.hide();
 
 	toggleButton.click(function(){ 
 		$(this).toggleClass('open');

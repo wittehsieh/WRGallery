@@ -48,9 +48,9 @@
 	</script>
 
 	<script src="js/myJS/myDataCenter.js"></script>
-    <script src="js/myJS/myCard.js"></script>
+    <script src="js/myJS/myNavMenu.js"></script>
     <script src="js/myJS/myAccordionMenu.js"></script>
-    <script src="js/myJS/myMainMenu.js"></script>
+    <script src="js/myJS/myCard.js"></script>
     
     <script>
 
@@ -58,17 +58,19 @@
 
 		function onDataLoadComplete() {	
 			
-    		// Create main menu dynamically
-    		createMainMenu(dataCenter, "type", $('.site-menu'));
-			setMainMenuToggled($(".toggle-button"), $(".site-sidebar-menu"));
-			// setMainMenuToggled($(".site-menu-toggle"), $(".site-sidebar-menu"));
-    		//createMainMenuToggle(dataCenter, "type", $('.site-menu-toggle'));
+    		// Create main menu 
+    		createNavMenu(dataCenter, "type", $('.site-menu'));  
+    		setNavMenuToggled($(".toggle-button"), $(".site-sidebar-menu"));
+    		 	
+    		// Create mobile menu 
     		// createAccordionMenu(dataCenter, "type", $('.site-menu-toggle'));
-    		
-			// Create sidebar menu dynamically 
+    		// setNavMenuToggled($(".toggle-button"), $(".site-menu-toggle"));	
+			
+			// Create sidebar menu  
     		createAccordionMenu(dataCenter, "year", $('.site-sidebar-menu'));
+    		// createAccordionMenu(dataCenter, "type", $('.site-sidebar-menu'));
     		
-    		// Display card content dynamically
+    		// Display card content 
     		var defaultCardObject = dataCenter.getObjectByKey("year")["2017"][0];
     		createCard(defaultCardObject, $('.site-card')); 
 		}
