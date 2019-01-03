@@ -77,6 +77,11 @@
     		// Display card content 
     		var defaultCardObject = dataCenter.getObjectByKey("year")["2017"][0];
     		createCard(defaultCardObject, $('.site-card')); 
+
+    		$(window).resize(function(){
+   			 $("#sidebarMenu").accordion("refresh");
+   			 $("#mobileMenu").accordion("refresh");
+			});
 		}
     </script>
 

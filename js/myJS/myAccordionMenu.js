@@ -12,15 +12,21 @@
 // ---------------------------- // 
 // 2.createAccordionPanel
 // ---------------------------- // 
+// data-toggle="collapse" 設定連結為可展開/可折疊
+// data-target 指定連結的子元件ID (指定連結打開面版)
+// data-parent 指定連結的父元件ID (限定一次僅一面板打開)
+// ---------------------------- // 
 // <div class="panel">
 // 	<div class="panel-heading" id="rootID_heading_X">
 // 		<h4 class="panel-title">
-//          <a class="accordion-toggle collapsed" data-toggle="collapse" 
-//                    data-parent="#rootID" href="#rootID_collapse_X">category1
+//          <a class="accordion-toggle collapsed" 
+//             data-toggle="collapse" 
+//             data-parent="#rootID"
+//             data-target="#rootID_collapse_X">categoryX 
 //          </a>
 // 		</h4>
 // 	</div>
-// 	<div id="rootID_collapse_X" class="panel-collapse collapse">
+// 	<div class="panel-collapse collapse" id="rootID_collapse_X">
 // 		<div class="panel-body">
 // 			createItemList();
 // 		</div>
@@ -32,7 +38,6 @@
 // <div id="rootID" class="panel-group">     
 //  createAccordionPanel();
 // </div>
-
 
 function onItemClicked(dataObject) {
 
@@ -77,10 +82,8 @@ function createAccordionPanel(dataObjectArray, index, key, parent, rootID) {
 	var panelTitleLink = document.createElement('a');
 	panelTitleLink.setAttribute('class', 'accordion-toggle collapsed');
 	panelTitleLink.setAttribute('data-toggle', 'collapse');
-	// panelTitleLink.setAttribute('data-parent', '#accordion');
-	// panelTitleLink.setAttribute('data-parent', '.accordion');
+	panelTitleLink.setAttribute('data-target', '#'+rootID+'_collapse_'+index);
 	panelTitleLink.setAttribute('data-parent', '#'+rootID);
-	panelTitleLink.setAttribute('href', '#'+rootID+'_collapse_'+index);
 	panelTitleLink.text = key;
 	panelTitle.appendChild(panelTitleLink);
 
@@ -97,8 +100,6 @@ function createAccordionMenu(dataCenter, sortKey, parent, rootID) {
 	console.log('rootID: '+rootID);
 
 	var panelGroup = document.createElement('div');
-	// panelGroup.setAttribute('id', 'accordion');
-	// panelGroup.setAttribute('class', 'accordion');
 	panelGroup.setAttribute('id', rootID);
 	panelGroup.setAttribute('class', 'panel-group');
 
