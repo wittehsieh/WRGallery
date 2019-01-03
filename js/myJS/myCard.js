@@ -114,7 +114,7 @@ function reloadCard(dataObject) {
 
 	if(dataObject.linkTitle !== '') {
 
-		console.log(dataObject.link);
+		// console.log(dataObject.link);
     	console.log('reloadCard');
 
 		var cardButton = document.getElementById("card-button");

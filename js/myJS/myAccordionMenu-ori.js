@@ -1,3 +1,4 @@
+
 // Used with _accordion.css
 
 // ---------------------------- // 
@@ -13,14 +14,15 @@
 // 2.createAccordionPanel
 // ---------------------------- // 
 // <div class="panel">
-// 	<div class="panel-heading" id="rootID_heading_X">
+// 	<div class="panel-heading" id="heading_X">
 // 		<h4 class="panel-title">
 //          <a class="accordion-toggle collapsed" data-toggle="collapse" 
-//                    data-parent="#rootID" href="#rootID_collapse_X">category1
+//                    data-parent="#accordion" href="#collapse_X">category1
+//                    data-parent=".accordion" href="#collapse_X">category1
 //          </a>
 // 		</h4>
 // 	</div>
-// 	<div id="rootID_collapse_X" class="panel-collapse collapse">
+// 	<div id="collapse_X" class="panel-collapse collapse">
 // 		<div class="panel-body">
 // 			createItemList();
 // 		</div>
@@ -29,7 +31,8 @@
 // ---------------------------- // 
 // 3.createAccordionMenu
 // ---------------------------- // 
-// <div id="rootID" class="panel-group">     
+// <div id="accordion" class="panel-group">     X
+// <div class="accordion" class="panel-group">  O
 //  createAccordionPanel();
 // </div>
 
@@ -60,14 +63,14 @@ function createItemList(dataObjectArray, parent) {
 	}
 	parent.appendChild(panelBody);
 }
-function createAccordionPanel(dataObjectArray, index, key, parent, rootID) {
+function createAccordionPanel(dataObjectArray, index, key, parent) {
 
 	var panel = document.createElement('div');
 	panel.setAttribute('class', 'panel');
 
 	var panelHeading = document.createElement('div');
 	panelHeading.setAttribute('class', 'panel-heading');
-	panelHeading.setAttribute('id', rootID+'_heading_'+index);
+	panelHeading.setAttribute('id', 'heading_'+index);
 	panel.appendChild(panelHeading);
 
 	var panelTitle = document.createElement('h4');
@@ -77,36 +80,32 @@ function createAccordionPanel(dataObjectArray, index, key, parent, rootID) {
 	var panelTitleLink = document.createElement('a');
 	panelTitleLink.setAttribute('class', 'accordion-toggle collapsed');
 	panelTitleLink.setAttribute('data-toggle', 'collapse');
-	// panelTitleLink.setAttribute('data-parent', '#accordion');
+	panelTitleLink.setAttribute('data-parent', '#accordion');
 	// panelTitleLink.setAttribute('data-parent', '.accordion');
-	panelTitleLink.setAttribute('data-parent', '#'+rootID);
-	panelTitleLink.setAttribute('href', '#'+rootID+'_collapse_'+index);
+	panelTitleLink.setAttribute('href', '#collapse_'+index);
 	panelTitleLink.text = key;
 	panelTitle.appendChild(panelTitleLink);
 
 	var panelCollapse = document.createElement('div');
 	panelCollapse.setAttribute('class', 'panel-collapse collapse');
-	panelCollapse.setAttribute('id', rootID+'_collapse_'+index);
+	panelCollapse.setAttribute('id', 'collapse_'+index);
 	createItemList(dataObjectArray, panelCollapse) ;
 	panel.appendChild(panelCollapse);
 
 	parent.append(panel);
 }
-function createAccordionMenu(dataCenter, sortKey, parent, rootID) {
-
-	console.log('rootID: '+rootID);
+function createAccordionMenu(dataCenter, sortKey, parent) {
 
 	var panelGroup = document.createElement('div');
-	// panelGroup.setAttribute('id', 'accordion');
+	panelGroup.setAttribute('id', 'accordion');
 	// panelGroup.setAttribute('class', 'accordion');
-	panelGroup.setAttribute('id', rootID);
 	panelGroup.setAttribute('class', 'panel-group');
 
 	var objectArrayByKey = dataCenter.getObjectByKey(sortKey); //{2014: Array(1), 2015: Array(3), ...}
 	var keyArray = Object.keys(objectArrayByKey); //["2014", "2015", ...]
 	
 	for (var i=0; i<keyArray.length; i++) {
-		createAccordionPanel(objectArrayByKey[keyArray[i]], i, keyArray[i], panelGroup, rootID);
+		createAccordionPanel(objectArrayByKey[keyArray[i]], i, keyArray[i], panelGroup);
 	}
 	
 	parent.append(panelGroup);
