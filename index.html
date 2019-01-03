@@ -61,27 +61,19 @@
     		// Create main menu 
     		createNavMenu(dataCenter, "type", $('.site-menu'));  
     		
-    		 	
-    		
-			// Create sidebar menu  
-    		// createAccordionMenu(dataCenter, "year", $('.site-sidebar-menu'));
-    		createAccordionMenu(dataCenter, "year", $('.site-sidebar-menu'), "sidebarMenu");
-    		// createAccordionMenu(dataCenter, "type", $('.site-sidebar-menu'));
-
     		
     		// Create mobile menu 
     		createAccordionMenu(dataCenter, "type", $('.site-menu-toggle-content'), "mobileMenu");
-    		setNavMenuToggled($(".site-menu-toggle-button"), $(".site-menu-toggle-content"));	
-			
+    		setNavMenuToggled($(".site-menu-toggle-button"), $(".site-menu-toggle-content"));
     		
+
+			// Create sidebar menu  
+    		createAccordionMenu(dataCenter, "year", $('.site-sidebar-menu'), "sidebarMenu");
+
+    		  		
     		// Display card content 
     		var defaultCardObject = dataCenter.getObjectByKey("year")["2017"][0];
     		createCard(defaultCardObject, $('.site-card')); 
-
-    		$(window).resize(function(){
-   			 $("#sidebarMenu").accordion("refresh");
-   			 $("#mobileMenu").accordion("refresh");
-			});
 		}
     </script>
 

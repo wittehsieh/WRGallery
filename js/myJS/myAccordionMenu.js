@@ -97,8 +97,6 @@ function createAccordionPanel(dataObjectArray, index, key, parent, rootID) {
 }
 function createAccordionMenu(dataCenter, sortKey, parent, rootID) {
 
-	console.log('rootID: '+rootID);
-
 	var panelGroup = document.createElement('div');
 	panelGroup.setAttribute('id', rootID);
 	panelGroup.setAttribute('class', 'panel-group');

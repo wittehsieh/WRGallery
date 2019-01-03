@@ -54,6 +54,9 @@
 @media (min-width: 992px) {	.site-logo-img { display: none; } }
 
 /* ------------ menu ------------ */
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-menu { display: block; }
+
 /*.site-menu, .site-menu-toggle {*/
 .site-menu, .site-menu-toggle-button {
 	font-family: 'Alegreya Sans';
@@ -76,6 +79,8 @@
 .site-menu-btn:hover { color: gold; }
 .site-menu-btn:active { color: gold; }
 .site-menu-btn:focus { color: gold; }
+
+
 
 /* Desktop and larger */
 @media (min-width: 992px) {	
