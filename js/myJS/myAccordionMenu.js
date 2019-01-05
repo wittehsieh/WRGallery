@@ -110,3 +110,13 @@ function createAccordionMenu(dataCenter, sortKey, parent, rootID) {
 	
 	parent.append(panelGroup);
 }
+
+
+function myFunction(x) {
+	$('.accordion-toggle:not(".collapsed")').collapse('toggle');
+
+}
+
+var x = window.matchMedia("(min-width: 992px)")
+myFunction(x) // Call listener function at run time
+x.addListener(myFunction) // Attach listener function on state changes

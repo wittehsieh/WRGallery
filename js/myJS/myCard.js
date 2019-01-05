@@ -10,7 +10,6 @@
 // 		<span class="title-sub" id="card-subtitle"></span>
 // 		<!-- &nbsp; -->
 // 		<span class="title-sub" id="card-type"></span>
-// 		<!-- <span class="title-sub" id="card-type-2"></span> -->
 // 		<hr/>
 // 		<p class="desc" id="card-desc"></p>
 // 		<a class="button button-lightseagreen" id="card-button"></a>
@@ -21,6 +20,7 @@
 
 // 建立card類別
 var card = new Object();
+var cardButtonArray = [];
 // 初始化
 function createCard(dataObject, parent) {
 
@@ -31,9 +31,7 @@ function createCard(dataObject, parent) {
 	var img = document.createElement('img');
 	img.setAttribute('id', 'card-img');
 	img.setAttribute('class', 'img-fluid');
-	img.setAttribute('src', dataObject.img);
 	img.setAttribute('width', '100%');
-	// img.setAttribute('object-fit', 'fill');
 	cardImg.appendChild(img);
 
 	var cardContent = document.createElement('div');
@@ -42,25 +40,21 @@ function createCard(dataObject, parent) {
 	var cardTitle = document.createElement('h3');
 	cardTitle.setAttribute('id', 'card-title');
 	cardTitle.setAttribute('class', 'title');
-	cardTitle.textContent = dataObject.title;
 	cardContent.appendChild(cardTitle);
 
 	var cardYear = document.createElement('span');
 	cardYear.setAttribute('id', 'card-year');
 	cardYear.setAttribute('class', 'title-sub');
-	cardYear.textContent = dataObject.year+'\u00a0';
 	cardContent.appendChild(cardYear);
 
 	var cardSubtitle = document.createElement('span');
 	cardSubtitle.setAttribute('id', 'card-subtitle');
 	cardSubtitle.setAttribute('class', 'title-sub');
-	cardSubtitle.textContent = dataObject.id+'\u00a0';
 	cardContent.appendChild(cardSubtitle);
 
 	var cardType = document.createElement('span');
 	cardType.setAttribute('id', 'card-type');
 	cardType.setAttribute('class', 'title-sub');
-	cardType.textContent = dataObject.type;
 	cardContent.appendChild(cardType);
 
 	var hr = document.createElement('hr');
@@ -69,28 +63,24 @@ function createCard(dataObject, parent) {
 	var cardDesc = document.createElement('p');
 	cardDesc.setAttribute('id', 'card-desc');
 	cardDesc.setAttribute('class', 'desc');
-	cardDesc.textContent = dataObject.desc;
 	cardContent.appendChild(cardDesc);
 
-    if(dataObject.linkTitle !== '') {
-
-    	console.log('createCard');
-
+    for (var i=0; i<5; i++) {
     	var cardButton = document.createElement('a');
 		cardButton.setAttribute('id', 'card-button');
 		cardButton.setAttribute('class', 'button');
 		cardButton.setAttribute('target', '_blank');
-		cardButton.textContent = dataObject.linkTitle;
 		cardContent.appendChild(cardButton);
-    }
-	
-	// var cardButton2;
-	// var cardButton3;
 
+		cardButtonArray.push(cardButton);
+    }
+    
 	card.appendChild(cardImg);
 	card.appendChild(cardContent);
 
 	parent.append(card);
+
+	reloadCard(dataObject);
 }
 function reloadCard(dataObject) {
 
@@ -112,13 +102,16 @@ function reloadCard(dataObject) {
 	var cardDesc = document.getElementById("card-desc");
 	cardDesc.textContent = dataObject.desc;
 
-	if(dataObject.linkTitle !== '') {
-
-		// console.log(dataObject.link);
-    	console.log('reloadCard');
-
-		var cardButton = document.getElementById("card-button");
-		cardButton.setAttribute('href', dataObject.link);
-		cardButton.textContent = dataObject.linkTitle;	
-    }
+	var cardLinkTitleArray = dataObject.linkTitle.split(",");
+	var cardLinkArray = dataObject.link.split(",");
+	for (var i=0; i<cardButtonArray.length; i++) {
+		if(i<cardLinkArray.length && cardLinkArray[i].trim().length > 0) {
+			cardButtonArray[i].style.visibility = 'visible'; 
+			cardButtonArray[i].setAttribute('href', cardLinkArray[i]);
+			cardButtonArray[i].textContent = cardLinkTitleArray[i];	
+		}
+		else {
+			cardButtonArray[i].style.visibility = 'hidden'; 
+		}
+	}
 }

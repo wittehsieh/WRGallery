@@ -13,7 +13,7 @@
 		right: 0;
 		z-index: 1 ;
 	}
-	.card-horizontal-left  .card-content{
+	.card-horizontal-left .card-content{
 		right: auto;
 		left:;
 	}

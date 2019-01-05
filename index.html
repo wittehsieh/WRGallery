@@ -31,7 +31,7 @@
 		<div class="container">			
 			<div class="row">
 				<!-- Accordion Sidebar -->
-				<div class="site-sidebar-menu col-lg-3"></div>
+				<div class="site-sidebar-menu site-sidebar-menu-bg col-lg-3"></div>
 				<!-- Card content -->
 				<div class="site-card col-md-12 col-lg-9"></div>
 			</div>	
@@ -64,7 +64,7 @@
     		
     		// Create mobile menu 
     		createAccordionMenu(dataCenter, "type", $('.site-menu-toggle-content'), "mobileMenu");
-    		setNavMenuToggled($(".site-menu-toggle-button"), $(".site-menu-toggle-content"));
+    		setMobileMenu($(".site-menu-toggle-button"), $(".site-menu-toggle-content"), '(min-width: 992px)');
     		
 
 			// Create sidebar menu  

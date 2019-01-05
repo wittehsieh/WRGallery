@@ -3,8 +3,7 @@
 
 // <nav class="nav">
 // 		<div class="dropdown nav-link">
-// 			<button class="btn dropdown-toggle" type="button" 
-//                  data-toggle="dropdown">APP<span class="caret"></span></button>
+// 			<button class="btn dropdown-toggle" type="button">APP</button>
 // 			<ul class="dropdown-menu">
 //    			<li><a>聖劍使的禁咒詠唱</a></li>
 // 				<li><a>溫蒂妮小姐AR紅包</a></li>
@@ -38,8 +37,8 @@ function createNavMenu(dataCenter, sortKey, parent) {
 		// four btn: APP WEP EXPO ANI 
 		var btn = document.createElement('button');
 		btn.setAttribute('class', 'site-menu-btn dropdown-toggle');
-		btn.setAttribute('type', 'button');
-		btn.setAttribute('data-toggle', 'dropdown');
+		// btn.setAttribute('type', 'button');
+		// btn.setAttribute('data-toggle', 'dropdown');
 		btn.innerHTML = keyArray[i]; // APP WEB EXPO ANIM
 		div.appendChild(btn);
 
@@ -62,10 +61,24 @@ function createNavMenu(dataCenter, sortKey, parent) {
 
 	parent.append(nav);
 }
-function setNavMenuToggled(toggleButton, menu){
+function setMobileMenu(toggleButton, toggleMenu, toggleMediaQuery) {
 
-	toggleButton.click(function(){ 
-		$(this).toggleClass('open');
-		menu.slideToggle();
-	});
+	var isToggled = false;
+	toggleButton.click(toggle);
+	function toggle() {
+
+		// change button & menu opened if both closed
+		// change button & menu closed if both opened
+		toggleButton.toggleClass('open');
+		toggleMenu.slideToggle();
+
+		// change toggle state
+		isToggled = toggleButton.hasClass('open');
+	}
+
+	var mql = window.matchMedia(toggleMediaQuery);
+	mql.addListener(onMediaQueryChanged);
+	function onMediaQueryChanged(mql) {
+		if(isToggled) { toggle(); }
+	}
 }
