@@ -22,6 +22,7 @@ body {
 a, a:visited, a:hover, a:active, a:focus { text-decoration: none; } 
 a { color: black; }
 a:hover { color: #369fb2; cursor: pointer; }
+a:hover { color: #e88521; cursor: pointer; }
 a:visited { color: white; }
 
 /* body img */

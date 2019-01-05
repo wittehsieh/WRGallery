@@ -12,8 +12,11 @@
 // 		<span class="title-sub" id="card-type"></span>
 // 		<hr/>
 // 		<p class="desc" id="card-desc"></p>
-// 		<a class="button button-lightseagreen" id="card-button"></a>
-// 		<!-- <a class="button button-lightseagreen" id="card-button2"></a> -->
+// 		<a class="button" id="card-button_0"></a>
+// 		<a class="button" id="card-button_1"></a>
+// 		<a class="button" id="card-button_2"></a>
+// 		<a class="button" id="card-button_3"></a>
+// 		<a class="button" id="card-button_4"></a>
 // 		<!-- ================================ -->
 // 	</div>
 // </div>
@@ -67,7 +70,7 @@ function createCard(dataObject, parent) {
 
     for (var i=0; i<5; i++) {
     	var cardButton = document.createElement('a');
-		cardButton.setAttribute('id', 'card-button');
+		cardButton.setAttribute('id', 'card-button_'+i);
 		cardButton.setAttribute('class', 'button');
 		cardButton.setAttribute('target', '_blank');
 		cardContent.appendChild(cardButton);
