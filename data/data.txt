@@ -1,0 +1,17 @@
+[
+	{"id": "Swordsman", "year": "2014", "title": "聖劍使的禁咒詠唱", "type": "APP", 
+	"desc": "改編自日本知名輕小說的線上角色扮演遊戲，提供玩家展現自我風格的角色製作工具，以及原汁原味呈現小說中的刺激戰鬥。製作範籌包含UI系統、戰鬥系統、對話演出系統、AI模組等。", 
+	"img": "img/swordsman.jpg", 
+	"linkTitle": "介紹影片", "link": "https://www.youtube.com/watch?v=4mpUbb8b2Dw"},
+
+	{"id": "MissUndine", "year": "2015", "title": "溫蒂妮小姐AR紅包", "type": "APP", 
+	"desc": "結合知名網紅插畫家IP與AR技術，變成會唱會動的有趣紅包，讓過年拿到紅包的moment加上一份驚喜！", 
+	"img": "img/miss-undine.jpg", 
+	"linkTitle": "活動網頁", "link": "http://cameo.tw/missundine/envelope/index.php"},
+
+	{"id": "QToto", "year": "2015", "title": "兒童卡啦OK", "type": "APP", 
+	"desc": "提供親子同樂的攝影棚，讓爸爸媽媽及小朋友能跟著兒歌一起唱唱跳跳，並透過簡單的操作錄製成影片。", 
+	"img": "img/qtoto.jpeg", 
+	"linkTitle": "iOS下載", "link": "https://itunes.apple.com/tw/app/qtoto/id1035232788?mt=8"}
+
+]

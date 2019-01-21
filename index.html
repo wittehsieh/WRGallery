@@ -55,7 +55,24 @@
     
     <script>
 
-    	dataCenter.loadCsvData("data/data.csv", onDataLoadComplete);
+		$(function(){ 
+
+			// var jsonData;
+    		$.ajax({
+    			url:"data/data.txt",
+    			success: function(res){
+    				// console.log(res);
+    				// jsonData = JSON.parse(res);
+    				dataCenter.csvData = JSON.parse(res);
+    				// console.log(dataCenter);
+    				onDataLoadComplete();
+					
+    			}
+    		});
+    	});
+		
+
+    	// dataCenter.loadCsvData("data/data.csv", onDataLoadComplete);
 
 		function onDataLoadComplete() {	
 			
@@ -73,10 +90,18 @@
 
     		  		
     		// Display card content 
-    		var defaultCardObject = dataCenter.getObjectByKey("year")["2017"][0];
+    		var defaultCardObject = dataCenter['id'=='Swordsman'];
+    		//var defaultCardObject = dataCenter.getObjectByKey("year")["2017"][0];
     		createCard(defaultCardObject, $('.site-card')); 
 		}
+
+
+
+
+
     </script>
+
+
 
 
 </body>

@@ -67,8 +67,7 @@ function setMobileMenu(toggleButton, toggleMenu, toggleMediaQuery) {
 	toggleButton.click(toggle);
 	function toggle() {
 
-		// change button & menu opened if both closed
-		// change button & menu closed if both opened
+		// switch between add/remove class
 		toggleButton.toggleClass('open');
 		toggleMenu.slideToggle();
 
